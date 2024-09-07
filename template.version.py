@@ -1,0 +1,1 @@
+echoof_version='{{version}}'

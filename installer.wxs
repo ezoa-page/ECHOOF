@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+	<Package
+        Language="1033"
+        Manufacturer="Ezoa"
+        Name="ECHOOF"
+        UpgradeCode="F064B803-736D-45BD-9E40-FC21C7C12FEF"
+        Version="0.1.1">
+		<MajorUpgrade DowngradeErrorMessage="A later version of [ProductName] is already installed. Setup will now exit." />
+		<MediaTemplate EmbedCab="yes" />
+		<StandardDirectory Id="ProgramFiles64Folder">
+				<Directory Id="INSTALLFOLDER" Name="ECHOOF">
+					<Component Id="ProductComponent">
+						<!-- Our command line utility -->
+						<File Source="dist\ECHOOF.exe" KeyPath="yes" />
+						<!-- Add install path to system path -->
+					<Environment Id="AddToPath"
+				  Name="PATH"
+				  Value="[INSTALLFOLDER]"
+				  Permanent="no"
+				  Part="last"
+				  Action="set"
+				  System="yes"/>
+					</Component>
+				</Directory>
+		</StandardDirectory>
+		<Feature Id="MainFeature">
+			<ComponentRef Id="ProductComponent" />
+		</Feature>
+	</Package>
+</Wix>
