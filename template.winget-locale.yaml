@@ -2,7 +2,7 @@ PackageIdentifier: "{{author}}.{{name}}"
 PackageVersion: "{{version}}"
 PackageLocale: "en-US"
 Publisher: "{{author}}"
-PackageName: "{{name}"
+PackageName: "{{name}}"
 License: "Other/Proprietary License"
 ShortDescription: "{{description}}"
 Tags:
